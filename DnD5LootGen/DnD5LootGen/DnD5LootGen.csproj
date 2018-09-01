@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Aquatic Sound 01.mp3" />
+    <None Remove="background.jpg" />
+    <None Remove="city.PNG" />
+    <None Remove="Creepy Dungeon Ambience Sound  Non Copyrighted Sound Effects.mp3" />
+    <None Remove="CURSOL_CANCEL.wav.mp3" />
+    <None Remove="CURSOL_MOVE.wav.mp3" />
+    <None Remove="CURSOL_OK.wav.mp3" />
+    <None Remove="CURSOL_SELECT.wav.mp3" />
+    <None Remove="Decrepify.mp3" />
+    <None Remove="dungeon.PNG" />
+    <None Remove="Forest.PNG" />
+    <None Remove="Jungle Sound Effect.mp3" />
+    <None Remove="misc.PNG" />
+    <None Remove="netrher.PNG" />
+    <None Remove="Town.mp3" />
+    <None Remove="underwater.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Aquatic Sound 01.mp3" />
+    <EmbeddedResource Include="background.jpg" />
+    <EmbeddedResource Include="city.PNG" />
+    <EmbeddedResource Include="Creepy Dungeon Ambience Sound  Non Copyrighted Sound Effects.mp3" />
+    <EmbeddedResource Include="CURSOL_CANCEL.wav.mp3" />
+    <EmbeddedResource Include="CURSOL_MOVE.wav.mp3" />
+    <EmbeddedResource Include="CURSOL_OK.wav.mp3" />
+    <EmbeddedResource Include="CURSOL_SELECT.wav.mp3" />
+    <EmbeddedResource Include="Decrepify.mp3" />
+    <EmbeddedResource Include="dungeon.PNG" />
+    <EmbeddedResource Include="Forest.PNG" />
+    <EmbeddedResource Include="Jungle Sound Effect.mp3" />
+    <EmbeddedResource Include="misc.PNG" />
+    <EmbeddedResource Include="netrher.PNG" />
+    <EmbeddedResource Include="Town.mp3" />
+    <EmbeddedResource Include="underwater.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.MediaManager" Version="0.4.5" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.4.5" />
+    <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

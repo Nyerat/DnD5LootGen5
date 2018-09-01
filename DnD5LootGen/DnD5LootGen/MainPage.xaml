@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DnD5LootGen"
+             x:Class="DnD5LootGen.MainPage"
+             BackgroundImage="background.jpg">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="DnD 5E Loot Generator" Grid.Row="0" Grid.Column="2" 
+               HorizontalOptions="Center" VerticalOptions="FillAndExpand"
+               FontSize="Large"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="EnvrionmentGrid"> <!--Environments-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="city.PNG" Grid.Row="0" Grid.Column="0" Opacity="0.8"/>
+            <Button x:Name="cityButton" Grid.Row="0" Grid.Column="0" Text="City" FontSize="24"/>
+
+            <Image Source="dungeon.PNG" Grid.Row="0" Grid.Column="1" Opacity="0.8"/>
+            <Button x:Name="dungeonButton" Grid.Row="0" Grid.Column="1" Text="Dungeon" FontSize="24"/>
+
+            <Image Source="Forest.PNG" Grid.Row="0" Grid.Column="2" Opacity="0.8"/>
+            <Button x:Name="forestButton" Grid.Row="0" Grid.Column="2" Text="Forest" FontSize="24"/>
+
+            <Image Source="underwater.PNG" Grid.Row="1" Grid.Column="0" Opacity="0.8"/>
+            <Button x:Name="waterButton" Grid.Row="1" Grid.Column="0" Text="Aquatic" FontSize="24"/>
+
+            <Image Source="netrher.PNG" Grid.Row="1" Grid.Column="1" Opacity="0.8"/>
+            <Button x:Name="netherButton" Grid.Row="1" Grid.Column="1" Text="Nether" FontSize="24"/>
+
+            <Image Source="misc.PNG" Grid.Row="1" Grid.Column="2" Opacity="0.8"/>
+            <Button x:Name="miscButton" Grid.Row="1" Grid.Column="2" Text="Misc" FontSize="24"/>
+
+
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" IsVisible="False" x:Name="OptionGrid"> <!--Options-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Picker Title="Treasure Ratio" x:Name="treasureRatio" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2"> <!--Treasure Ratio Pickers-->
+                    
+                    <Picker.Items>
+                <x:String>All Treasure</x:String>
+                    <x:String>Mostly Treasure</x:String>
+                    <x:String>Even Split</x:String>
+                    <x:String>Mostly Gold</x:String>
+                    <x:String>All Gold</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>
+                    2</Picker.SelectedIndex>
+
+
+            </Picker>
+
+            <Picker Title="Challenge Rating" x:Name="challengeRating" Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"> <!--Challenger Rating Pickers-->
+
+                <Picker.Items>
+                    <x:String>Poor: 0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>Decent: 5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>Great: 10</x:String>
+                    <x:String>11</x:String>
+                    <x:String>12</x:String>
+                    <x:String>13</x:String>
+                    <x:String>14</x:String>
+                    <x:String>Amazing: 15</x:String>
+                    <x:String>16</x:String>
+                    <x:String>17</x:String>
+                    <x:String>18</x:String>
+                    <x:String>19</x:String>
+                    <x:String>Ungodly: 20</x:String>
+                    <x:String>Beyond</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>
+                    0</Picker.SelectedIndex>
+
+
+            </Picker>
+
+            <Button Grid.Row="0" Grid.Column="0" 
+                    x:Name="bossOption" Text="Boss Encounter" BackgroundColor="Salmon" BorderColor="White"/>
+            <Button Grid.Row="1" Grid.Column="0" 
+                    x:Name="questOption" Text="Quest Items" BackgroundColor="Salmon"/>
+            <Button Grid.Row="2" Grid.Column="0" 
+                    x:Name="magicalOption" Text="Magical Items" BackgroundColor="Salmon"/>
+            <Button Grid.Row="3" Grid.Column="0" 
+                    x:Name="potionOption" Text="Potions" BackgroundColor="Salmon"/>
+            <Button Grid.Row="0" Grid.Column="1" 
+                    x:Name="equipmentOption" Text="Old Equipment" BackgroundColor="Salmon"/>
+            <Button Grid.Row="1" Grid.Column="1" 
+                    x:Name="matsOption" Text="Materials" BackgroundColor="Salmon"/>
+            <Button Grid.Row="2" Grid.Column="1" 
+                    x:Name="lockOption" Text="Lockboxes" BackgroundColor="Salmon"/>
+            
+
+
+        </Grid>
+
+        <StackLayout Grid.Row="1" Grid.Column="2" IsVisible="False" x:Name="EnemyGrid"> <!--Enemies-->
+            <Button x:Name="Humanoids" Text="Humanoids" BackgroundColor="Salmon"/>
+            <Button x:Name="Beasts" Text="Beasts" BackgroundColor="Salmon"/>
+            <Button x:Name="Demons" Text="Demons" BackgroundColor="Salmon"/>
+            <Button x:Name="Celestials" Text="Celestials" BackgroundColor="Salmon"/>
+            <Button x:Name="Fey" Text="Fey" BackgroundColor="Salmon"/>
+            <Button x:Name="Undead" Text="Undead" BackgroundColor="Salmon"/>
+            <Button x:Name="Elementals" Text="Elementals" BackgroundColor="Salmon"/>
+            <Button x:Name="Constructs" Text="Constructs" BackgroundColor="Salmon"/>
+            <Button x:Name="Plants" Text="Plants" BackgroundColor="Salmon"/>
+            <Button x:Name="Nether" Text="Nether" BackgroundColor="Salmon"/>
+            <Button x:Name="Treasure" Text="Treasure" BackgroundColor="Salmon"/>
+            <Button x:Name="Misc" Text="Misc" BackgroundColor="Salmon"/>
+            
+
+        </StackLayout>
+
+        <Editor Text="After selecting your options and pressing roll your results will be posted here, feel free to edit them in this box if needed." Grid.Row="1" Grid.RowSpan="3" Grid.Column="4" x:Name="LootResults"/>
+
+        <Grid Grid.Row="4" Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="clearButton" Text="Clear" Grid.Row="0" Grid.Column="1" BackgroundColor="AliceBlue"/>
+            <Button x:Name="rollButton" Text="Roll" Grid.Row="0" Grid.Column="0" BackgroundColor="DarkSeaGreen" FontSize="Large" IsEnabled="False"/>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>
